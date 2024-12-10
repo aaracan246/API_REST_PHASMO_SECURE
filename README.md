@@ -34,6 +34,7 @@ name VARCHAR2(15) NOT NULL
 Tabla 4: Logros
 ```sql
 CREATE TABLE Achievements(
+id_achv NUMBER PRIMARY KEY,
 name VARCHAR2(15),
 description VARCHAR(200),
 achieved BOOLEAN DEFAULT FALSE
