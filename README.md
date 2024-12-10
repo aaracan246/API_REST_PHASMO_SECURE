@@ -3,38 +3,39 @@ La idea del proyecto sería la de una aplicación que muestre información del v
 
 Tabla 1: Usuarios
 
-'''sql
+```sql
 CREATE TABLE Users(
 username VARCHAR2(15),
 password VARCHAR2(15),
 role VARCHAR2(10)
 )
-'''
+```
+
 
 Tabla 2: Fantasmas
 
-***sql
+```sql
 CREATE TABLE Ghosts(
 id NUMBER PRIMARY KEY,
 name VARCHAR2(15),
 description VARCHAR2(200)
 )
-***
+```
 
 Table 3: Evidence
 
-***sql
+```sql
 CREATE TABLE Evidences(
 id NUMBER PRIMARY KEY,
 name VARCHAR2(15) NOT NULL
 )
-***
+```
 
 Tabla 4: Logros
-***sql
+```sql
 CREATE TABLE Achievements(
 name VARCHAR2(15),
 description VARCHAR(200),
 achieved BOOLEAN DEFAULT FALSE
 )
-***
+```
