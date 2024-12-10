@@ -2,15 +2,17 @@ La idea del proyecto sería la de una aplicación que muestre información del v
 
 
 Tabla 1: Usuarios
-***sql
+
+'''sql
 CREATE TABLE Users(
 username VARCHAR2(15),
 password VARCHAR2(15),
 role VARCHAR2(10)
 )
-***
+'''
 
 Tabla 2: Fantasmas
+
 ***sql
 CREATE TABLE Ghosts(
 id NUMBER PRIMARY KEY,
@@ -20,6 +22,7 @@ description VARCHAR2(200)
 ***
 
 Table 3: Evidence
+
 ***sql
 CREATE TABLE Evidences(
 id NUMBER PRIMARY KEY,
