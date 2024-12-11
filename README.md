@@ -5,9 +5,10 @@ Tabla 1: Usuarios
 
 ```sql
 CREATE TABLE Users(
-username VARCHAR2(15),
-password VARCHAR2(15),
-role VARCHAR2(10)
+  id NUMBER PRIMARY KEY,
+  username VARCHAR2(15),
+  password VARCHAR2(15),
+  role VARCHAR2(10)
 )
 ```
 
@@ -16,9 +17,9 @@ Tabla 2: Fantasmas
 
 ```sql
 CREATE TABLE Ghosts(
-id NUMBER PRIMARY KEY,
-name VARCHAR2(15),
-description VARCHAR2(200)
+  id NUMBER PRIMARY KEY,
+  name VARCHAR2(15),
+  description VARCHAR2(200)
 )
 ```
 
@@ -26,17 +27,31 @@ Table 3: Evidence
 
 ```sql
 CREATE TABLE Evidences(
-id NUMBER PRIMARY KEY,
-name VARCHAR2(15) NOT NULL
+  id NUMBER PRIMARY KEY,
+  name VARCHAR2(15) NOT NULL
 )
 ```
 
-Tabla 4: Logros
+Tabla 4: Tabla cruzada
+
+```sql
+CREATE TABLE Ghost_Evidences (
+    ghost_id NUMBER,
+    evidence_id NUMBER,
+    PRIMARY KEY (ghost_id, evidence_id),
+    FOREIGN KEY (ghost_id) REFERENCES Ghosts(id),
+    FOREIGN KEY (evidence_id) REFERENCES Evidences(id)
+);
+```
+
+Tabla 5: Logros
 ```sql
 CREATE TABLE Achievements(
-id_achv NUMBER PRIMARY KEY,
-name VARCHAR2(15),
-description VARCHAR(200),
-achieved BOOLEAN DEFAULT FALSE
+    user_id NUMBER,
+    achievement_id NUMBER, 
+    achieved BOOLEAN DEFAULT FALSE, 
+    PRIMARY KEY (user_id, achievement_id),
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+    FOREIGN KEY (achievement_id) REFERENCES Achievements(id)
 )
 ```
