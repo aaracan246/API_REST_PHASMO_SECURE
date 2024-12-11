@@ -6,9 +6,9 @@ Tabla 1: Usuarios
 ```sql
 CREATE TABLE Users(
   id NUMBER PRIMARY KEY,
-  username VARCHAR2(15),
-  password VARCHAR2(15),
-  role VARCHAR2(10)
+  username VARCHAR2(15) NOT NULL,
+  password VARCHAR2(15) NOT NULL,
+  role VARCHAR2(10) NOT NULL
 )
 ```
 
@@ -32,7 +32,7 @@ CREATE TABLE Evidences(
 )
 ```
 
-Tabla 4: Tabla cruzada
+Tabla 4: Tabla cruzada pruebas
 
 ```sql
 CREATE TABLE Ghost_Evidences (
@@ -45,13 +45,28 @@ CREATE TABLE Ghost_Evidences (
 ```
 
 Tabla 5: Logros
+
 ```sql
 CREATE TABLE Achievements(
+    id_achv NUMBER PRIMARY KEY,
+    name VARCHAR2(15) NOT NULL,
+    description VARCHAR2(200),
+    achieved BOOLEAN DEFAULT FALSE
+)
+```
+
+
+Tabla 6: Tabla cruzada logros
+
+```sql
+CREATE TABLE User_Achievements (
     user_id NUMBER,
-    achievement_id NUMBER, 
-    achieved BOOLEAN DEFAULT FALSE, 
+    achievement_id NUMBER,
+    achieved BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (user_id, achievement_id),
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (achievement_id) REFERENCES Achievements(id)
-)
+);
 ```
+
+Modelo entidad-relación (WIP):
