@@ -23,7 +23,7 @@ CREATE TABLE Ghosts(
 )
 ```
 
-Table 3: Evidence
+Table 3: Pruebas
 
 ```sql
 CREATE TABLE Evidences(
@@ -32,7 +32,7 @@ CREATE TABLE Evidences(
 )
 ```
 
-Tabla 4: Tabla cruzada pruebas
+Tabla 4: Tabla cruzada pruebas_fantasmas
 
 ```sql
 CREATE TABLE Ghost_Evidences (
@@ -56,7 +56,7 @@ CREATE TABLE Achievements(
 ```
 
 
-Tabla 6: Tabla cruzada logros
+Tabla 6: Tabla cruzada logros_usuarios
 
 ```sql
 CREATE TABLE User_Achievements (
