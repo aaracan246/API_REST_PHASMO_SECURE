@@ -8,7 +8,7 @@ CREATE TABLE Users(
   id NUMBER PRIMARY KEY,
   username VARCHAR2(15) NOT NULL,
   password VARCHAR2(15) NOT NULL,
-  role VARCHAR2(10) NOT NULL
+  roles VARCHAR2(10) NOT NULL
 )
 ```
 
