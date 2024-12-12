@@ -10,5 +10,9 @@ data class Evidence(
     val id: Long?,
 
     @Column
-    val name: String
+    val name: String,
+
+    @ManyToMany
+    @JoinColumn(name = "id_ghost")
+    val ghost: Ghost
 )

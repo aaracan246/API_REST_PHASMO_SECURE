@@ -15,5 +15,7 @@ data class Ghost(
     @Column
     val description: String,
 
-
+    @ManyToMany
+    @JoinColumn(name = "id_evidence")
+    val evidence: Evidence
 )
