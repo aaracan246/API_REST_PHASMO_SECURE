@@ -44,29 +44,5 @@ CREATE TABLE Ghost_Evidences (
 );
 ```
 
-Tabla 5: Logros
-
-```sql
-CREATE TABLE Achievements(
-    id_achv NUMBER PRIMARY KEY,
-    name VARCHAR2(15) NOT NULL,
-    description VARCHAR2(200),
-    achieved BOOLEAN DEFAULT FALSE
-)
-```
-
-
-Tabla 6: Tabla cruzada logros_usuarios  (One to Many)
-
-```sql
-CREATE TABLE User_Achievements (
-    user_id NUMBER,
-    achievement_id NUMBER,
-    achieved BOOLEAN DEFAULT FALSE,
-    PRIMARY KEY (user_id, achievement_id),
-    FOREIGN KEY (user_id) REFERENCES Users(id),
-    FOREIGN KEY (achievement_id) REFERENCES Achievements(id)
-);
-```
 
 Modelo entidad-relación (WIP):
