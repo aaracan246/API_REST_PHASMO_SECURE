@@ -17,8 +17,6 @@ class UsuarioService: UserDetailsService {
 
         var usuario = userRepository.findByUsername(username!!).orElseThrow()
 
-        // val roles: List<GrantedAuthority> = usuario.roles?.map { rol -> SimpleGrantedAuthority("ROLE_$rol") }?.toList() ?: listOf()
-
         return User.builder()
             .username(usuario.username)
             .password(usuario.password)

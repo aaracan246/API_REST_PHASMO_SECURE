@@ -7,7 +7,7 @@ import jakarta.persistence.*
 data class Ghost(
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long?,
+    val id: Long? = null,
 
     @Column
     val name: String,
