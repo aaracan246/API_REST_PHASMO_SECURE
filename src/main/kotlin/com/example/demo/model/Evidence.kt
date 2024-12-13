@@ -12,7 +12,6 @@ data class Evidence(
     @Column
     val name: String,
 
-    @ManyToMany
-    @JoinColumn(name = "id_ghost")
-    val ghost: Ghost
+    @ManyToMany(mappedBy = "evidence")
+    val ghost: List<Ghost> = mutableListOf()
 )

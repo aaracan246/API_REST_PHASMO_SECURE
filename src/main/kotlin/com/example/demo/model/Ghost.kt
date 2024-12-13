@@ -16,6 +16,10 @@ data class Ghost(
     val description: String,
 
     @ManyToMany
-    @JoinColumn(name = "id_evidence")
-    val evidence: Evidence
+//    @JoinTable(
+//        name = "ghost_evidence",
+//        joinColumns = [JoinColumn(name = "ghost_id")],
+//        inverseJoinColumns = [JoinColumn(name = "evidence_id")]
+//    )
+    val evidence: List<Evidence> = mutableListOf()
 )

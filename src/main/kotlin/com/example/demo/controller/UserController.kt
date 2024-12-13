@@ -41,7 +41,7 @@ class UserController {
         try {
             authentication = authenticationManager.authenticate(UsernamePasswordAuthenticationToken(user.username, user.password))
         } catch (e: AuthenticationException) {
-            return ResponseEntity(mapOf("mensaje" to "Credenciales incorrectas dude"), HttpStatus.UNAUTHORIZED)
+            return ResponseEntity(mapOf("mensaje" to "There was an error with your credentials."), HttpStatus.UNAUTHORIZED)
         }
 
         var token = ""
