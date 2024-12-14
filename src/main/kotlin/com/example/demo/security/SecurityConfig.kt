@@ -42,7 +42,7 @@ class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/evidences").permitAll()
 
 
-                .requestMatchers(HttpMethod.GET, "/users/register").permitAll()
+                .requestMatchers(HttpMethod.POST, "/users/register").permitAll()
                 .requestMatchers(HttpMethod.GET, "/users/login").permitAll()
 
                 // Tienes que estar logeado para acceder a estos métodos
@@ -51,14 +51,14 @@ class SecurityConfig {
 
                 // Solo un admin debería tener acceso a estos métodos
                 // Fantasmas:
-                .requestMatchers(HttpMethod.POST, "/ghosts/insert_ghost").hasRole("Admin")
-                .requestMatchers(HttpMethod.PUT, "/ghosts/update_ghost").hasRole("Admin")
-                .requestMatchers(HttpMethod.DELETE, "/ghosts/delete_ghost").hasRole("Admin")
+                .requestMatchers(HttpMethod.POST, "/ghosts/insert_ghost").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/ghosts/update_ghost").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/ghosts/delete_ghost").hasRole("ADMIN")
 
                 // Pruebas:
-                .requestMatchers(HttpMethod.POST, "/evidences/insert_evidence").hasRole("Admin")
-                .requestMatchers(HttpMethod.PUT, "/evidences/update_evidence").hasRole("Admin")
-                .requestMatchers(HttpMethod.DELETE, "/evidences/delete_evidence").hasRole("Admin")
+                .requestMatchers(HttpMethod.POST, "/evidences/insert_evidence").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/evidences/update_evidence").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/evidences/delete_evidence").hasRole("ADMIN")
 
 
                 .anyRequest().permitAll() }
