@@ -32,7 +32,7 @@ CREATE TABLE Evidences(
 )
 ```
 
-Tabla 4: Tabla cruzada pruebas_fantasmas (One to Many)
+Tabla 4: Tabla cruzada pruebas_fantasmas (Many to Many)
 
 ```sql
 CREATE TABLE Ghost_Evidences (
