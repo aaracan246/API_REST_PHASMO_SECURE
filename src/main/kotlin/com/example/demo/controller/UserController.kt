@@ -38,7 +38,7 @@ class UserController {
     }
 
     // Logear
-    @PostMapping("/login")
+    @GetMapping("/login")
     fun login(
         @RequestBody usuario: Usuario
     ): ResponseEntity<Any>?{

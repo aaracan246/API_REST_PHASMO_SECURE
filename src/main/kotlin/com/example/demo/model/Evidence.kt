@@ -1,5 +1,6 @@
 package com.example.demo.model
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 
 @Entity
@@ -13,5 +14,6 @@ data class Evidence(
     var name: String,
 
     @ManyToMany(mappedBy = "evidence")
+    @JsonIgnore // Con esto evito el bucle infinito
     val ghost: MutableList<Ghost> = mutableListOf()
 )

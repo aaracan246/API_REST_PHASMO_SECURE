@@ -7,9 +7,11 @@ import com.example.demo.service.EvidenceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -33,7 +35,7 @@ class EvidenceController {
         }
     }
 
-    @GetMapping("/insert_evidence")
+    @PostMapping("/insert_evidence")
     fun insert(
         @RequestBody newEvidence: Evidence
     ): ResponseEntity<Evidence?>{
@@ -43,7 +45,7 @@ class EvidenceController {
         return ResponseEntity(newEvidence, HttpStatus.CREATED)
     }
 
-    @PostMapping("/update_evidence")
+    @PutMapping("/update_evidence")
     fun update(
         @RequestBody evidence: Evidence?
     ): ResponseEntity<Evidence>{
@@ -54,7 +56,7 @@ class EvidenceController {
         throw NotFoundException("Could not find requested evidence.")
     }
 
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     fun delete(
         @PathVariable id: Long?
     ){
