@@ -4,7 +4,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "users")
-data class User(
+data class Usuario(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
@@ -14,6 +14,6 @@ data class User(
     @Column(nullable = false)
     var password: String,
 
-    @Column
-    var roles: String? = null
+    @Column(nullable = false)
+    var roles: ROLE? = null
 )

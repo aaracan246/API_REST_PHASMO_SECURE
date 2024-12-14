@@ -9,17 +9,12 @@ data class Ghost(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @Column
+    @Column(nullable = false)
     val name: String,
 
-    @Column
+    @Column(nullable = false)
     val description: String,
 
     @ManyToMany
-//    @JoinTable(
-//        name = "ghost_evidence",
-//        joinColumns = [JoinColumn(name = "ghost_id")],
-//        inverseJoinColumns = [JoinColumn(name = "evidence_id")]
-//    )
     val evidence: List<Evidence> = mutableListOf()
 )
