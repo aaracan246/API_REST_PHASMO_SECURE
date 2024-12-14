@@ -39,9 +39,9 @@ class EvidenceService {
 
         existingEvidence.name = evidence.name
 
-        val newGhosts = existingEvidence.ghost
+
         existingEvidence.ghost.clear()
-        existingEvidence.ghost.addAll(newGhosts)
+        existingEvidence.ghost.addAll(evidence.ghost)
 
         return evidence
     }

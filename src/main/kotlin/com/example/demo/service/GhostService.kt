@@ -47,10 +47,10 @@ class GhostService {
         existingGhost.name = ghost.name
         existingGhost.description = ghost.description
 
-        val newEvidences = existingGhost.evidence
+
 
         existingGhost.evidence.clear()
-        existingGhost.evidence.addAll(newEvidences)
+        existingGhost.evidence.addAll(ghost.evidence)
 
         ghostRepository.save(ghost)
 

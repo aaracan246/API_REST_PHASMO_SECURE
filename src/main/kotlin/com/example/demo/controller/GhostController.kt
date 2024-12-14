@@ -31,7 +31,7 @@ class GhostController {
     }
 
     // Inserta un fantasma nuevo
-    @PostMapping("/insert")
+    @PostMapping("/insert_ghost")
     fun insert(
         @RequestBody newGhost: Ghost
     ): ResponseEntity<Ghost?>{
