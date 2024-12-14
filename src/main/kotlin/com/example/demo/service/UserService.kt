@@ -34,9 +34,9 @@ class UserService: UserDetailsService {
             .password(usuario.password)
             .authorities(roles)
             .build()
-
     }
 
+    // Insertar usuario - registarlo
     fun insert(userRegister: Usuario): Usuario {
 
         when{
@@ -53,8 +53,7 @@ class UserService: UserDetailsService {
         return userRegister
     }
 
-
-
+    // Updatear usuario
     fun updateUser(usuario: Usuario): Usuario {
 
         val existingUser = userRepository.findById(usuario.id!!).orElseThrow { NotFoundException("No user was found on that id.")  }
@@ -74,9 +73,9 @@ class UserService: UserDetailsService {
 
 
         return usuario
-
     }
 
+    // Borrar usuario
     fun deleteUser(id: Long) {
         try {
             userRepository.deleteById(id)
@@ -85,6 +84,4 @@ class UserService: UserDetailsService {
             throw NotFoundException("Could not find requested user.")
         }
     }
-
-
 }

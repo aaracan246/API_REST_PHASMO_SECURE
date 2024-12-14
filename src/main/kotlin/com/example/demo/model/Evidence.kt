@@ -13,5 +13,5 @@ data class Evidence(
     val name: String,
 
     @ManyToMany(mappedBy = "evidence")
-    val ghost: List<Ghost> = mutableListOf()
+    val ghost: MutableList<Ghost> = mutableListOf()
 )

@@ -10,11 +10,11 @@ data class Ghost(
     val id: Long? = null,
 
     @Column(nullable = false)
-    val name: String,
+    var name: String,
 
     @Column(nullable = false)
-    val description: String,
+    var description: String,
 
     @ManyToMany
-    val evidence: List<Evidence> = mutableListOf()
+    val evidence: MutableList<Evidence> = mutableListOf()
 )
