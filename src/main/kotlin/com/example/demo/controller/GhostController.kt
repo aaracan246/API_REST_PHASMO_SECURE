@@ -41,7 +41,7 @@ class GhostController {
     }
 
     // Updatea el fantasma - Esta función sí es viable ya que los fantasmas sufren balanceo de vez en cuando y podrían llegar a cambiar de pruebas
-    @PutMapping("/update_Ghost")
+    @PutMapping("/update_ghost")
     fun updateGhost(
         @RequestBody ghost: Ghost?
     ): ResponseEntity<Any>?{

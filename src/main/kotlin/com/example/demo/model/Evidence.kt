@@ -10,7 +10,7 @@ data class Evidence(
     val id: Long? = null,
 
     @Column
-    val name: String,
+    var name: String,
 
     @ManyToMany(mappedBy = "evidence")
     val ghost: MutableList<Ghost> = mutableListOf()

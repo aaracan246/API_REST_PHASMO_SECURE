@@ -21,6 +21,7 @@ class GhostService {
 
             newGhost.description.isBlank() -> throw BadRequestException("Password cannot be empty.")
 
+            // Los fantasmas del Phasmophobia tienen 3 pruebas que determinan ante qué fantasma nos encontramos, por lo que hay que controlarlo
             newGhost.evidence.isEmpty() || newGhost.evidence.count() != 3 -> throw BadRequestException("A ghost must have 3 pieces of evidence.")
         }
 
@@ -39,6 +40,7 @@ class GhostService {
 
             existingGhost.description.isBlank() -> throw BadRequestException("Password cannot be empty.")
 
+            // Los fantasmas del Phasmophobia tienen 3 pruebas que determinan ante qué fantasma nos encontramos, por lo que hay que controlarlo
             existingGhost.evidence.isEmpty() || existingGhost.evidence.count() != 3 -> throw BadRequestException("A ghost must have 3 pieces of evidence.")
         }
 

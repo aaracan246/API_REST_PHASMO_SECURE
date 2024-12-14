@@ -59,7 +59,7 @@ class UserController {
 
 
     // Modificar un usuario
-    @PutMapping("/{id}")
+    @PutMapping("/user")
     fun updateUser(
         @RequestBody usuario: Usuario?
     ): ResponseEntity<Any>?{

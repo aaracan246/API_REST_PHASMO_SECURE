@@ -14,6 +14,7 @@ data class Usuario(
     @Column(nullable = false)
     var password: String,
 
+    @Enumerated(EnumType.STRING) // Para poder almacenarlo como string o peta
     @Column(nullable = false)
-    var roles: ROLE? = null
+    var roles: ROLE? = ROLE.USER
 )
