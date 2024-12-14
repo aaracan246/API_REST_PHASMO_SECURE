@@ -59,7 +59,7 @@ class UserController {
 
 
     // Modificar un usuario
-    @PutMapping("/user")
+    @PutMapping("/update_user")
     fun updateUser(
         @RequestBody usuario: Usuario?
     ): ResponseEntity<Any>?{
@@ -72,7 +72,7 @@ class UserController {
     }
 
     // Borrar un usuario
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete_user")
     fun deleteUser(
         @PathVariable id: Long?
     ){
