@@ -1,6 +1,6 @@
 package com.example.demo.model
 
 enum class ROLE (val rolename: String){
-    ADMIN("Admin"),
-    USER("User")
+    ADMIN("ADMIN"),
+    USER("USER")
 }

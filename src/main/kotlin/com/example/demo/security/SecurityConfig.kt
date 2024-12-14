@@ -41,19 +41,16 @@ class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/ghosts").permitAll()
                 .requestMatchers(HttpMethod.GET, "/evidences").permitAll()
 
-
                 .requestMatchers(HttpMethod.POST, "/users/register").permitAll()
                 .requestMatchers(HttpMethod.GET, "/users/login").permitAll()
-
-                // Tienes que estar logeado para acceder a estos métodos
-                .requestMatchers(HttpMethod.GET, "/users/update_user").authenticated()
-                .requestMatchers(HttpMethod.DELETE, "/users/delete_user").authenticated()
 
                 // Solo un admin debería tener acceso a estos métodos
                 // Fantasmas:
                 .requestMatchers(HttpMethod.POST, "/ghosts/insert_ghost").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/ghosts/update_ghost").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.GET, "/users/update_user").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/ghosts/delete_ghost").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/users/delete_user").hasRole("ADMIN")
 
                 // Pruebas:
                 .requestMatchers(HttpMethod.POST, "/evidences/insert_evidence").hasRole("ADMIN")

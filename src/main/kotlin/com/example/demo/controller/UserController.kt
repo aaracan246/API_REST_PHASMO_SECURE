@@ -72,7 +72,7 @@ class UserController {
     }
 
     // Borrar un usuario
-    @DeleteMapping("/delete_user")
+    @DeleteMapping("/delete_user/{id}")
     fun deleteUser(
         @PathVariable id: Long?
     ){

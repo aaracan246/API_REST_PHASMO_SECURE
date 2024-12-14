@@ -8,6 +8,7 @@ import com.example.demo.model.Usuario
 import com.example.demo.repository.UserRepository
 import org.aspectj.weaver.ast.Not
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.User
 
 import org.springframework.security.core.userdetails.UserDetails
@@ -27,7 +28,7 @@ class UserService: UserDetailsService {
     override fun loadUserByUsername(username: String?): UserDetails {
 
         val usuario = userRepository.findByUsername(username!!).orElseThrow()
-        val roles = usuario.roles?.rolename
+        val roles = listOf(SimpleGrantedAuthority("ROLE_${usuario.roles?.rolename}"))
 
         return User.builder()
             .username(usuario.username)

@@ -56,7 +56,7 @@ class EvidenceController {
         throw NotFoundException("Could not find requested evidence.")
     }
 
-    @DeleteMapping("delete_evidence")
+    @DeleteMapping("delete_evidence/{id}")
     fun delete(
         @PathVariable id: Long?
     ){

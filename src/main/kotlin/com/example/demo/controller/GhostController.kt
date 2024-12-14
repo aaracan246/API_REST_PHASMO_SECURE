@@ -54,7 +54,7 @@ class GhostController {
     }
 
     // Borra un fantasma vía id
-    @DeleteMapping("/delete_ghost")
+    @DeleteMapping("/delete_ghost/{id}")
     fun deleteGhost(
         @PathVariable id: Long?
     ){
