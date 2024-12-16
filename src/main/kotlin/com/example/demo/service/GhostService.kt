@@ -61,7 +61,8 @@ class GhostService {
 
     fun deleteGhost(id: Long){
         try {
-            ghostRepository.deleteById(id)
+            val ghost = ghostRepository.findById(id).orElseThrow { throw NotFoundException("No ghost was found on that ID.") }
+            ghost.id?.let { ghostRepository.deleteById(it) }
         }
         catch (e: Exception) {
             throw NotFoundException("Could not find requested ghost id.")

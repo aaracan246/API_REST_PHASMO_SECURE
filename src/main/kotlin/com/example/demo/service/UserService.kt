@@ -41,7 +41,7 @@ class UserService: UserDetailsService {
     fun insert(userRegister: Usuario): Usuario {
 
         when{
-            userRegister.username.isBlank() -> throw BadRequestException("Username cannot be empty.")
+            userRegister.username.isBlank() -> { throw BadRequestException("Username cannot be empty.")}
 
             userRegister.password.isBlank() -> throw BadRequestException("Password cannot be empty.")
 
@@ -79,7 +79,8 @@ class UserService: UserDetailsService {
     // Borrar usuario
     fun deleteUser(id: Long) {
         try {
-            userRepository.deleteById(id)
+            val user = userRepository.findById(id).orElseThrow { throw NotFoundException("No user was found on that ID.") }
+            user.id?.let { userRepository.deleteById(it) }
         }
         catch (e: Exception){
             throw NotFoundException("Could not find requested user.")

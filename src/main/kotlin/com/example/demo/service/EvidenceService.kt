@@ -61,7 +61,8 @@ class EvidenceService {
 
     fun deleteEvidence(id: Long) {
         try {
-            evidenceRepository.deleteById(id)
+            val evidence = evidenceRepository.findById(id).orElseThrow(){ throw NotFoundException("No evidence was found on that ID.") }
+            evidence.id?.let { evidenceRepository.deleteById(it) }
         }
         catch (e: Exception){
             throw NotFoundException("Could not find requested evidence id.")

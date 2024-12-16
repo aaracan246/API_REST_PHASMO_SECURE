@@ -1,5 +1,6 @@
 package com.example.demo.error
 
+import com.example.demo.error.exception.NotFoundException
 import jakarta.servlet.http.HttpServletRequest
 import org.apache.coyote.BadRequestException
 import org.springframework.data.crossstore.ChangeSetPersister
@@ -15,7 +16,8 @@ class APIExceptionHandler {
     @ExceptionHandler(
         IllegalArgumentException::class,
         NumberFormatException::class,
-        BadRequestException::class)
+        BadRequestException::class,
+        NotFoundException::class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     fun handleBadRequest(request: HttpServletRequest, e: Exception) : ErrorResponse {
