@@ -1,5 +1,15 @@
 La idea del proyecto sería la de una aplicación que muestre información del videojuego Phasmophobia. A través de esta API se puede acceder a información básica como los fantasmas (su nombre, pruebas y descripción) o gestionar los logros que puedes obtener in-game.
 
+**NOMBRE
+
+**JUSTIFICACIÓN
+
+**DE QUÉ VA LA APP
+
+**DESCRIBIR TABLAS
+
+**ENDPOINTS
+
 
 Tabla 1: Usuarios
 
